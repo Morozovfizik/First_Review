@@ -1,10 +1,17 @@
-from tkinter import *
-from threading import *
+from tkinter import Tk
+from tkinter import Text
+from tkinter import Label
+from tkinter import Button
+from tkinter import END
+from tkinter import sys
+from threading import Thread
 import time
+
 
 root = Tk()
 root.title("Click to win")
 root.geometry('600x400+0+0')
+
 
 score = 0
 multy = 1
@@ -94,14 +101,19 @@ instext("Upgrade price: " + str(price), text2)
 instext("Auto upgrade\nprice: " + str(au_price), text3)
 instext("Click right now!!!", textend)
 
-rule = Label(text="Click to increase your score. To upgrade your clicker\nyou need to save up " +
+rule = Label(text="Click to increase your score." +
+                  " To upgrade your clicker\nyou need to save up " +
                   "essential score number.",
              font='Times 15', bg='grey', fg='black', width=55, height=2)
-hint = Label(text="Collect 10'000'000\nscores to complete\nthe game.", font='Times 18', fg='black', bg='grey',
+hint = Label(text="Collect 10'000'000\nscores to complete\nthe game.",
+             font='Times 18', fg='black', bg='grey',
              width=20, height=4)
-auto_click = Button(text="Buy autoclicker", font='Times 20', fg='red', width=22, height=2, command=autoclick)
-upgrader = Button(text="Improve multiplicator", font='Times 20', fg='green', width=22, height=2, command=improve)
-upclicker = Button(text="Improve autoclicker", font='Times 20', fg='blue', width=22, height=2, command=impauto)
+auto_click = Button(text="Buy autoclicker", font='Times 20',
+                    fg='red', width=22, height=2, command=autoclick)
+upgrader = Button(text="Improve multiplicator", font='Times 20',
+                  fg='green', width=22, height=2, command=improve)
+upclicker = Button(text="Improve autoclicker", font='Times 20',
+                   fg='blue', width=22, height=2, command=impauto)
 
 activate_auto = Button()
 root.bind("<space>", click)
